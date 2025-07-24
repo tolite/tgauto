@@ -1,0 +1,39 @@
+python-telegram-bot==20.6
+Flask==3.0.0
+python-dotenv==1.0.0
+SQLAlchemy==2.0.25
+# 创建项目目录
+mkdir telegram-bot-system
+cd telegram-bot-system
+
+# 创建虚拟环境
+python3 -m venv venv
+source venv/bin/activate
+
+# 安装必要的依赖
+pip install python-telegram-bot flask python-dotenv sqlalchemy
+
+# 创建requirements.txt文件
+pip freeze > requirements.txt
+
+# 创建项目结构
+mkdir bots web_admin utils data config logs
+
+# 创建基础文件
+touch main.py
+touch web_admin/__init__.py
+touch web_admin/routes.py
+touch bots/base_bot.py
+touch bots/customer_service_bot.py
+touch bots/report_bot.py
+touch utils/database.py
+touch utils/config.py
+
+# 初始化Git仓库
+git init
+git add .
+git commit -m "Initial commit"
+
+# 在GitHub上创建新仓库后，添加远程仓库并推送
+git remote add origin https://github.com/tolite/tgauto.git
+git push -u origin main
